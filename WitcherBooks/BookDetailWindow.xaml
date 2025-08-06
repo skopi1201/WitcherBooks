@@ -1,0 +1,85 @@
+﻿<Window x:Class="WitcherBooks.BookDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Book Details"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"
+        Width="800" Height="700">
+
+    <Grid Background="#2A2A2A">
+        <Border CornerRadius="10" BorderBrush="#A87D4D" BorderThickness="3" Padding="20" Background="#1E1E1E" Margin="30">
+            <StackPanel>
+                <TextBlock Text="Book Details"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           FontFamily="Georgia"
+                           Foreground="#D6B877"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <!-- img -->
+                <Image x:Name="ImagePreview"
+                       Width="120"
+                       Height="120"
+                       Margin="0,0,0,20"
+                       HorizontalAlignment="Center"
+                       Stretch="UniformToFill"/>
+
+                <!-- title -->
+                <TextBlock Text="Title:"
+                           FontFamily="Georgia"
+                           Foreground="#D6B877"/>
+                <TextBlock x:Name="TitleBlock"
+                           FontSize="16"
+                           FontFamily="Georgia"
+                           Foreground="White"
+                           Margin="0,0,0,10"/>
+
+                <!-- date -->
+                <TextBlock Text="Date Added:"
+                           FontFamily="Georgia"
+                           Foreground="#D6B877"/>
+                <TextBlock x:Name="DateBlock"
+                           FontFamily="Georgia"
+                           Foreground="White"
+                           Margin="0,0,0,10"/>
+
+                <!-- desc -->
+                <TextBlock Text="Description:"
+                           FontFamily="Georgia"
+                           Foreground="#D6B877"/>
+                <RichTextBox x:Name="ContentBox"
+                             Height="150"
+                             FontFamily="Georgia"
+                             Foreground="White"
+                             Background="#1E1E1E"
+                             BorderBrush="#A87D4D"
+                             BorderThickness="1"
+                             IsReadOnly="True"
+                             Margin="0,0,0,20"
+                             FocusVisualStyle="{x:Null}"/>
+
+                <!-- back -->
+                <Button x:Name="backBT"
+                        Content="Back"
+                        Width="100"
+                        Background="#6A1E1E"
+                        Foreground="White"
+                        FontFamily="Georgia"
+                        HorizontalAlignment="Center"
+                        Click="backBT_Click"/>
+                <ToggleButton x:Name="MuteButton"
+              Margin="0,10,0,0"
+            Width="80"
+        Content="Mute"
+        Checked="MuteButton_Checked"
+        Unchecked="MuteButton_Unchecked"
+        Background="#a87d4d"
+        Foreground="Black"
+        FontFamily="Georgia"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

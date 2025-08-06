@@ -1,0 +1,139 @@
+﻿<Window x:Class="WitcherBooks.addWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add New Book"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"
+        Width="800" Height="700">
+
+    <Grid Background="#2A2A2A">
+        <Border CornerRadius="10" BorderBrush="#A87D4D" BorderThickness="3" Padding="20" Background="#1E1E1E" Margin="30">
+            <StackPanel>
+                <TextBlock Text="Add a New Witcher Book"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           FontFamily="Georgia"
+                           Foreground="#D6B877"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+               
+                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Title:"
+                               Width="80"
+                               VerticalAlignment="Center"
+                               FontFamily="Georgia"
+                               Foreground="#D6B877"/>
+                        <TextBox x:Name="titleTB"
+                                 Width="300"
+                                 FontFamily="Georgia"
+                                 Background="#333"
+                                 Foreground="White"
+                                 Padding="4"
+                                 TextChanged="titleTB_TextChanged"/>
+                    </StackPanel>
+                    <TextBlock x:Name="titleError"
+                               Foreground="Red"
+                               FontSize="12"
+                               Visibility="Collapsed"
+                               Text="Please enter a book title." />
+                </StackPanel>
+
+               
+                <ToolBar Background="#333" Foreground="White" Margin="0,0,0,10">
+                    <Button Content="Bold" Click="Bold_Click"/>
+                    <Button Content="Italic" Click="Italic_Click"/>
+                    <Button Content="Underline" Click="Underline_Click"/>
+                    <Separator/>
+                    <ComboBox x:Name="FontSizeBox" Width="60" SelectionChanged="FontSizeBox_SelectionChanged" Background="#333" BorderBrush="Black">
+                        <ComboBoxItem Content="12"/>
+                        <ComboBoxItem Content="14"/>
+                        <ComboBoxItem Content="16"/>
+                        <ComboBoxItem Content="18"/>
+                        <ComboBoxItem Content="20"/>
+                    </ComboBox>
+                    <ComboBox x:Name="FontFamilyBox" Width="150" SelectionChanged="FontFamilyBox_SelectionChanged" Background="#333" BorderBrush="Black">
+                        <ComboBoxItem Content="Arial"/>
+                        <ComboBoxItem Content="Georgia"/>
+                        <ComboBoxItem Content="Times New Roman"/>
+                        <ComboBoxItem Content="Consolas"/>
+                        <ComboBoxItem Content="Segoe UI"/>
+                    </ComboBox>
+                    <Button Content="Color" Click="Color_Click"/>
+                </ToolBar>
+
+               
+                <Label Content="Description:" FontFamily="Georgia" Foreground="#D6B877"/>
+                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                    <RichTextBox x:Name="richTextBox"
+                                 Height="150"
+                                 Background="#333"
+                                 Foreground="White"
+                                 FontFamily="Georgia"/>
+                    <TextBlock x:Name="descError"
+                               Foreground="Red"
+                               FontSize="12"
+                               Visibility="Collapsed"
+                               Text="Please enter a description." />
+                </StackPanel>
+
+               
+                <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button x:Name="addImgBT"
+                                Content="Add Image"
+                                Click="addImgBT_Click"
+                                Width="100"
+                                Background="#A87D4D"
+                                Foreground="Black"
+                                FontFamily="Georgia"/>
+                        <Image x:Name="imagePreview"
+                               Width="80"
+                               Height="80"
+                               Margin="20,0,0,0"
+                               Stretch="UniformToFill"/>
+                    </StackPanel>
+                    <TextBlock x:Name="imageError"
+                               Foreground="Red"
+                               FontSize="12"
+                               Visibility="Collapsed"
+                               Text="Please select a book cover image." />
+                </StackPanel>
+
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="addBT"
+                            Content="Save"
+                            Width="100"
+                            Margin="10,0"
+                            Background="#4E9148"
+                            Foreground="White"
+                            FontFamily="Georgia"
+                            Click="addBT_Click"/>
+                    <Button x:Name="backBT"
+                            Content="Back"
+                            Width="100"
+                            Margin="10,0"
+                            Background="#6A1E1E"
+                            Foreground="White"
+                            FontFamily="Georgia"
+                            Click="backBT_Click"/>
+                </StackPanel>
+
+               
+                <ToggleButton x:Name="MuteButton"
+                              Margin="0,10,0,0"
+                              Width="80"
+                              Content="Mute"
+                              Checked="MuteButton_Checked"
+                              Unchecked="MuteButton_Unchecked"
+                              Background="#A87D4D"
+                              Foreground="Black"
+                              FontFamily="Georgia"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
